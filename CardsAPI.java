@@ -35,8 +35,6 @@ public class CardsAPI {
 
 
   static Deck deck = new Deck();
-  static String[] dealerHand;
-  static String[] playerHand;
 
   //Shuffle cmd
   public static void shuffle(){
@@ -44,22 +42,29 @@ public class CardsAPI {
   }
 
   //Dealing cmd
-  public static void deal(String[] role, int dealSize) {
+  public static void deal(ArrayList<Card> role, int dealSize) {
     for (int i = 0; i < dealSize; i++) {
       Card topCard = deck.deckOfCards.remove(0);
-      role[i] = topCard.val + " of " + topCard.suit;
+      role.add(topCard);
     }
   }
 
   //test
   public static void main(String[] args){
+    ArrayList<Card> dealerHand = new ArrayList<>();
+    ArrayList<Card> playerHand = new ArrayList<>();
     CardsAPI.shuffle();
     int gameHandSize = 5;
-    playerHand = new String[gameHandSize];
-    dealerHand = new String[gameHandSize];
+    System.out.println("---Player Hand---");
     CardsAPI.deal(playerHand, gameHandSize);
-    for (String card : playerHand) {
+    for (Card card : playerHand) {
       System.out.println(card);
+    }
+    System.out.println();
+    System.out.println("---Dealer Hand---");
+    CardsAPI.deal(dealerHand, gameHandSize);
+    for (Card card : dealerHand) {
+    System.out.println(card);
     }
   }
 }
