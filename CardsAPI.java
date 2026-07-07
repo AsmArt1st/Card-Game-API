@@ -12,6 +12,10 @@ public class CardsAPI {
         val = v;
         suit = s;
       }
+      @Override
+      public String toString() {
+        return val + " of " + suit;
+      }
     }
 
   //creating deck
