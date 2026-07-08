@@ -1,14 +1,23 @@
  //card class formatting
 public class Card{
-    public String suit;
-    public String val;
-    public Card(String v, String s){
-        val = v;
+    private final String rank;
+    private final String suit;
+    public Card(String r, String s){
+        rank = r;
         suit = s;
     }
 
+    //card encapsulation methods
+    public String getRank() {
+        return rank;
+    }
+
+    public String getSuit() {
+        return suit;
+    }
+    //card string formatting
     @Override
     public String toString() {
-        return val + " of " + suit;
+        return rank + " of " + suit;
     }
 }

@@ -4,7 +4,7 @@ import java.util.*;
 //creating deck
 public class Deck {
 
-    ArrayList<Card> cards;
+    private ArrayList<Card> cards;
 
     public Deck() {
         cards = new ArrayList<>(52);
@@ -28,7 +28,7 @@ public class Deck {
     public void deal(Hand hand, int dealSize) {
         for (int i = 0; i < dealSize; i++) {
             Card topCard = cards.remove(0);
-            hand.addCards(topCard);
+            hand.addCard(topCard);
         }
     }
 }
