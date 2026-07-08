@@ -9,7 +9,15 @@ public class Hand {
         cards = new ArrayList<Card>();
     }
 
-    public void addCard(Card card) {
+    public void addCards(Card card) {
         cards.add(card);
+    }
+
+    public void removeCards(Card card) {
+        cards.remove(card);
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
     }
 }

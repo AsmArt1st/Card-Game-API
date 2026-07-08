@@ -5,7 +5,7 @@ import java.util.*;
 public class Deck {
 
     ArrayList<Card> cards;
-    
+
     public Deck() {
         cards = new ArrayList<>(52);
         String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
@@ -25,10 +25,10 @@ public class Deck {
     }
 
     //Dealing cmd
-    public void deal(ArrayList<Card> role, int dealSize) {
+    public void deal(Hand hand, int dealSize) {
         for (int i = 0; i < dealSize; i++) {
             Card topCard = cards.remove(0);
-            role.add(topCard);
+            hand.addCards(topCard);
         }
     }
 }
