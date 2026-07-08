@@ -4,9 +4,11 @@ import java.util.*;
 public class Hand {
 
     ArrayList<Card> cards;
+    String handName;
 
-    public Hand() {
+    public Hand(String handName) {
         cards = new ArrayList<Card>();
+        this.handName = handName;
     }
 
     public void addCards(Card card) {
@@ -19,5 +21,16 @@ public class Hand {
 
     public ArrayList<Card> getCards() {
         return cards;
+    }
+
+    //hand string formatting
+    @Override
+    public String toString(){
+        String hand = handName + ":" + "\n";
+        for (Card card: cards) {
+            hand += card;
+            hand += "\n";
+        }
+        return hand;
     }
 }
