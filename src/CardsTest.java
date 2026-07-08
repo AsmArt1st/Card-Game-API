@@ -1,4 +1,4 @@
-public class CardsAPI {
+public class CardsTest {
 
     //test
     public static void main(String[] args){
@@ -12,8 +12,8 @@ public class CardsAPI {
         testDeck.deal(playerHand, gameHandSize);
         testDeck.deal(dealerHand, gameHandSize);
         
-        System.out.println(playerHand);
-        System.out.println();
         System.out.println(dealerHand);
+        System.out.println();
+        System.out.println(playerHand);
     }
 }
