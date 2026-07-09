@@ -5,10 +5,23 @@ public class Deck {
     
     //Fields
     private ArrayList<Card> cards;
+    private final String deckName;
 
     //Class Constructor
-    public Deck() {
+    public Deck(String deckName) {
+        
+        //validation
+        if (deckName == null) {
+            throw new IllegalArgumentException("Deck name cannot be null");
+        }
+
+        if (deckName.length() < 1) {
+            throw new IllegalArgumentException("Deck name must contain at least 1 character");
+        }
+
+        //method body
         cards = new ArrayList<>(52);
+        this.deckName = deckName;
         String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
         String[] ranks = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
         for (String suit : suits) {
@@ -51,5 +64,10 @@ public class Deck {
     //Size cmd
     public int size() {
         return cards.size();
+    }
+
+    //Name get cmd
+    public String getName() {
+        return deckName;
     }
 }

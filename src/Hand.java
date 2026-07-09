@@ -43,7 +43,7 @@ public class Hand {
         return Collections.unmodifiableList(cards);
     }
 
-    public String getHandName() {
+    public String getName() {
         return handName;
     }
 

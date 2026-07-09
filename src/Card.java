@@ -1,4 +1,7 @@
- //card class formatting
+//imports
+import java.util.*;
+
+//card class formatting
 public class Card{
 
     //fields
@@ -38,5 +41,28 @@ public class Card{
     @Override
     public String toString() {
         return rank + " of " + suit;
+    }
+
+    //Equals method override
+    @Override
+    public boolean equals(Object inCard) {
+
+        if (!(inCard instanceof Card)) {
+            return false;
+        }
+
+        Card otherCard = (Card) inCard;
+        if (rank.equals(otherCard.rank) && suit.equals(otherCard.suit)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    //hashCode method override
+    @Override
+    public int hashCode() {
+        return Objects.hash(rank, suit);
     }
 }

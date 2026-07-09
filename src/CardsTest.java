@@ -3,7 +3,7 @@ public class CardsTest {
     //test
     public static void main(String[] args) {
 
-        Deck testDeck = new Deck();
+        Deck testDeck = new Deck("Test Deck");
         Hand dealerHand = new Hand("Dealer's Hand");
         Hand playerHand = new Hand("Player's Hand");
 
