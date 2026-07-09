@@ -1,22 +1,65 @@
-Card game API project I made as a way to study Java. Use at your own risk.
+# CardsAPI
 
-Instructions
+Version: 1.0.0
 
-Make a deck with the deck constructor (generates a standard 52 card deck).
-Make hands with the hand constructor.
-Use the commands to program a game
+A Java card game API for creating and manipulating standard playing cards, decks of cards, and card hands.
+Originally a learning project but we'll see how big this grows
 
-Commands:
+
+Features:
+
+Card objects with enum ranks and suits
+Standard deck creation for 52-card decks (larger deck support planned)
+Deck shuffling and dealing x cards to a hand
+Hand management through the Hand class
+JUnit test files
+Maven support
+
+
+Setup
+
+git clone https://github.com/AsmArt1st/Card-Game-API
+
+Maven stuff:
+
+```bash
+mvn test
+```
+to test code
+
+```bash
+mvn javadoc
+```
+for documentation
+
+
+Classes
+
+Card
+Represents a single playing card with an enum rank and suit
 
 Deck
-shuffle() - shuffles the given deck, ie exdeck.shuffle()
-deal(Hand hand, int dealsize) - deals x cards to the given hand
+Creates and manages standard 52 card decks
 
 Hand
-addCards(Card card) - adds 1 card to specified hand, ie exhand.addCards(---)
-removeCards(Card card) - removes 1 card from specified hand, ie exhand.removeCards(---)
-getCards() - gets cards from a given hand, ie exhand.getCards()
+Stores and manages "hands" of card objects
 
-CardsAPI is just a test file rn, program as you wish
+## Example Usage
 
-More to come!
+```java
+Deck deck = new Deck("Game Deck");
+Hand playerHand = new Hand("Player Hand");
+
+deck.shuffle();
+deck.deal(playerHand, 5);
+
+System.out.println(playerHand);
+```
+
+```markdown
+Future Plans
+-add support for bigger decks
+-more utilities
+-additional deck customization
+
+and more to come!
