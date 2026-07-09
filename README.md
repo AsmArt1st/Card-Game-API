@@ -6,7 +6,7 @@ A Java card game API for creating and manipulating standard playing cards, decks
 Originally a learning project but we'll see how big this grows
 
 
-Features:
+## Features
 
 Card objects with enum ranks and suits
 Standard deck creation for 52-card decks (larger deck support planned)
@@ -16,24 +16,34 @@ JUnit test files
 Maven support
 
 
-Setup
+## Setup
 
-git clone https://github.com/AsmArt1st/Card-Game-API
+Clone the repository:
 
-Maven stuff:
+```bash
+git clone https://github.com/AsmArt1st/Card-Game-API.git
+```
+
+Navigate into the project:
+
+```bash
+cd Card-Game-API
+```
+
+Run the tests:
 
 ```bash
 mvn test
 ```
-to test code
+
+(Optional) Generate API documentation:
 
 ```bash
-mvn javadoc
+mvn javadoc:javadoc
 ```
-for documentation
 
 
-Classes
+## Classes
 
 Card
 Represents a single playing card with an enum rank and suit
@@ -47,17 +57,20 @@ Stores and manages "hands" of card objects
 ## Example Usage
 
 ```java
+import cardsapi.*;
+
 Deck deck = new Deck("Game Deck");
-Hand playerHand = new Hand("Player Hand");
+Hand hand = new Hand("Player's Hand");
 
 deck.shuffle();
-deck.deal(playerHand, 5);
+deck.deal(hand, 5);
 
-System.out.println(playerHand);
+System.out.println(hand);
 ```
 
+## Future Plans
+
 ```markdown
-Future Plans
 -add support for bigger decks
 -more utilities
 -additional deck customization
