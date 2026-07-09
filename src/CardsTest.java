@@ -9,8 +9,8 @@ public class CardsTest {
         Hand playerHand = new Hand("Player's Hand");
 
         testDeck.shuffle();
-        testDeck.deal(playerHand, gameHandSize);
-        testDeck.deal(dealerHand, gameHandSize);
+        testDeck.deal(playerHand, -1);
+        testDeck.deal(null, 12);
         
         System.out.println(dealerHand);
         System.out.println();
