@@ -47,4 +47,9 @@ public class Deck {
             hand.addCard(topCard);
         }
     }
+
+    //Size cmd
+    public int size() {
+        return cards.size();
+    }
 }

@@ -47,6 +47,10 @@ public class Hand {
         return handName;
     }
 
+    public int size() {
+        return cards.size();
+    }
+
     //hand string formatting
     @Override
     public String toString() {
