@@ -22,10 +22,8 @@ public class Deck {
         //method body
         cards = new ArrayList<>(52);
         this.deckName = deckName;
-        String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
-        String[] ranks = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
-        for (String suit : suits) {
-            for (String rank : ranks) {
+        for (Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
                 cards.add(new Card(rank, suit));
             }
         }
