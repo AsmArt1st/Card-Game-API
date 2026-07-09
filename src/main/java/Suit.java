@@ -1,3 +1,7 @@
+/**
+ * Enum list of all 4 suits in a standard 52 card deck
+ */
+
 public enum Suit {
     
     SPADES("Spades"),

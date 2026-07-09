@@ -1,14 +1,28 @@
 //imports
-import java.util.*;
+import java.util.Objects;
 
-//card class formatting
+
+/**
+ * Formats Card objects with suits and ranks
+ * 
+ * Uses the suits and ranks from a standard deck of 52 cards and stores them in objects
+ */
+
 public class Card {
 
     //fields
     private final Rank rank;
     private final Suit suit;
 
-    //Class constructor
+
+    /**
+     * Constructs a card object
+     * 
+     * @param rank takes in a rank enum as a parameter to store the rank of the card
+     * @param suit takes in a suit enum as a parameter to store the suit of the card
+     * @throws IllegalArgumentException if rank or suit parameter is null
+     */
+
     public Card(Rank rank, Suit suit) {
 
         //validation
@@ -25,10 +39,22 @@ public class Card {
     }
 
 
-    //card encapsulation methods
+    /**
+     * Allows caller to get the rank of given card
+     * 
+     * @return returns rank of given card
+    */
+
     public Rank getRank() {
         return rank;
     }
+
+
+    /**
+     * Allows caller to get the suit of given card
+     * 
+     * @return returns suit of given card
+     */
 
     public Suit getSuit() {
         return suit;
@@ -41,21 +67,18 @@ public class Card {
         return rank + " of " + suit;
     }
 
-    //Equals method override
+    /**
+     * equals() override in order  to compare a cards rank and suit enums
+     */
+    
     @Override
     public boolean equals(Object inCard) {
 
-        if (!(inCard instanceof Card)) {
+        if (!(inCard instanceof Card otherCard)) {
             return false;
         }
 
-        Card otherCard = (Card) inCard;
-        if (rank.equals(otherCard.rank) && suit.equals(otherCard.suit)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return rank == otherCard.rank && suit == otherCard.suit;
     }
 
     //hashCode method override

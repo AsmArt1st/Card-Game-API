@@ -1,3 +1,7 @@
+/**
+ * Enum list of all ranks in a standard deck of 52 cards
+ */
+
 public enum Rank {
     
     ACE("Ace"),
