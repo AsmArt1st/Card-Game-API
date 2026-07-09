@@ -6,21 +6,21 @@ public class Card{
     private final String suit;
 
     //Class constructor
-    public Card(String r, String s) {
+    public Card(String rank, String suit) {
 
         //validaiton errors
-        if (!( "Ace".equals(r) || "Two".equals(r) ||"Three".equals(r) ||"Four".equals(r) ||"Five".equals(r) ||"Six".equals(r) ||"Seven".equals(r) ||"Eight".equals(r) ||"Nine".equals(r) ||"Ten".equals(r) ||"Jack".equals(r) ||"Queen".equals(r) ||"King".equals(r))) {
+        if (!( "Ace".equals(rank) || "Two".equals(rank) ||"Three".equals(rank) ||"Four".equals(rank) ||"Five".equals(rank) ||"Six".equals(rank) ||"Seven".equals(rank) ||"Eight".equals(rank) ||"Nine".equals(rank) ||"Ten".equals(rank) ||"Jack".equals(rank) ||"Queen".equals(rank) ||"King".equals(rank))) {
             throw new IllegalArgumentException("Invalid Rank");
         }
 
-        if (!( "Spades".equals(s) || "Hearts".equals(s) || "Diamonds".equals(s) || "Clubs".equals(s))) {
+        if (!( "Spades".equals(suit) || "Hearts".equals(suit) || "Diamonds".equals(suit) || "Clubs".equals(suit))) {
             throw new IllegalArgumentException("Invalid Suit");
         }
 
 
-        //fields
-        rank = r;
-        suit = s;
+        //variables
+        this.rank = rank;
+        this.suit = suit;
     }
 
 

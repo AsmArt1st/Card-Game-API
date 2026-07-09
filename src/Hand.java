@@ -4,15 +4,34 @@ import java.util.*;
 public class Hand {
 
     private List<Card> cards;
-    private String handName;
+    private final String handName;
 
     public Hand(String handName) {
+
+        //validation
+        if (handName == null) {
+            throw new IllegalArgumentException("Hand name cannot be null");
+        }
+
+        if (handName.length() < 1) {
+            throw new IllegalArgumentException("Hand name must contain at least 1 character");
+        }
+
+        //Constructor body
         cards = new ArrayList<Card>();
+
         this.handName = handName;
     }
 
     //hand commands
     public void addCard(Card card) {
+
+        //validation
+        if (card == null) {
+            throw new IllegalArgumentException("Card cannot be null");
+        }
+
+        //Method body
         cards.add(card);
     }
 
