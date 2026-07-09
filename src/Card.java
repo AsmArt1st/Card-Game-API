@@ -2,37 +2,82 @@
 import java.util.*;
 
 //card class formatting
-public class Card{
+public class Card {
+
+    //Enums
+    public enum Rank {
+        ACE("Ace"),
+        TWO("Two"),
+        THREE("Three"),
+        FOUR("Four"),
+        FIVE("Five"),
+        SIX("Six"),
+        SEVEN("Seven"),
+        EIGHT("Eight"),
+        NINE("Nine"),
+        TEN("Ten"),
+        JACK("Jack"),
+        QUEEN("Queen"),
+        KING("King");
+
+        private final String rankName;
+
+        Rank(String rankName) {
+            this.rankName = rankName;
+        }
+
+        @Override
+        public String toString() {
+            return rankName;
+        }
+    }
+
+    public enum Suit {
+        SPADES("Spades"),
+        HEARTS("Hearts"),
+        DIAMONDS("Diamonds"),
+        CLUBS("Clubs");
+
+        private final String suitName;
+
+        Suit(String suitName) {
+            this.suitName = suitName;
+        }
+
+        @Override
+        public String toString() {
+            return suitName;
+        }
+    }
+
 
     //fields
-    private final String rank;
-    private final String suit;
+    private final Rank rank;
+    private final Suit suit;
 
     //Class constructor
-    public Card(String rank, String suit) {
+    public Card(Rank rank, Suit suit) {
 
-        //validaiton errors
-        if (!( "Ace".equals(rank) || "Two".equals(rank) ||"Three".equals(rank) ||"Four".equals(rank) ||"Five".equals(rank) ||"Six".equals(rank) ||"Seven".equals(rank) ||"Eight".equals(rank) ||"Nine".equals(rank) ||"Ten".equals(rank) ||"Jack".equals(rank) ||"Queen".equals(rank) ||"King".equals(rank))) {
-            throw new IllegalArgumentException("Invalid Rank");
+        //validation
+        if (rank == null) {
+            throw new IllegalArgumentException("Rank cannot be null");
+        }
+        
+        if (suit == null) {
+            throw new IllegalArgumentException("Suit cannot be null");
         }
 
-        if (!( "Spades".equals(suit) || "Hearts".equals(suit) || "Diamonds".equals(suit) || "Clubs".equals(suit))) {
-            throw new IllegalArgumentException("Invalid Suit");
-        }
-
-
-        //variables
         this.rank = rank;
         this.suit = suit;
     }
 
 
     //card encapsulation methods
-    public String getRank() {
+    public Rank getRank() {
         return rank;
     }
 
-    public String getSuit() {
+    public Suit getSuit() {
         return suit;
     }
 
