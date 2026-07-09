@@ -68,4 +68,19 @@ public class Deck {
     public String getName() {
         return deckName;
     }
+
+    public List<Card> getCards() {
+        return Collections.unmodifiableList(cards);
+    }
+
+    //hand string formatting
+    @Override
+    public String toString() {
+        String deck = deckName + ":" + "\n";
+        for (Card card: cards) {
+            deck += card;
+            deck += "\n";
+        }
+        return deck;
+    }
 }

@@ -28,7 +28,7 @@ public class Hand {
 
         //validation
         if (card == null) {
-            throw new IllegalArgumentException("Card cannot be null");
+            throw new IllegalArgumentException("Cannot add \"null\" to hand");
         }
 
         //Method body
