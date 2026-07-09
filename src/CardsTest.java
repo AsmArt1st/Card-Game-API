@@ -1,7 +1,7 @@
 public class CardsTest {
 
     //test
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         int gameHandSize = 5;
         Deck testDeck = new Deck();

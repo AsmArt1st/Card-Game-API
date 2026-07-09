@@ -30,7 +30,7 @@ public class Hand {
 
     //hand string formatting
     @Override
-    public String toString(){
+    public String toString() {
         String hand = handName + ":" + "\n";
         for (Card card: cards) {
             hand += card;

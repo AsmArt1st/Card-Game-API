@@ -9,10 +9,10 @@ public class Deck {
     public Deck() {
         cards = new ArrayList<>(52);
         String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
-        String[] values = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
+        String[] ranks = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
         for (String suit : suits) {
-            for (String val : values) {
-                cards.add(new Card(val, suit));
+            for (String rank : ranks) {
+                cards.add(new Card(rank, suit));
             }
         }
     }
@@ -20,7 +20,7 @@ public class Deck {
 //deck commands
 
     //Shuffle cmd
-    public void shuffle(){
+    public void shuffle() {
         Collections.shuffle(cards);
     }
 
