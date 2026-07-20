@@ -3,6 +3,7 @@ package cardsapi;
 //imports yay
 import java.util.Collection;
 import java.util.Collections;
+import java.util.ArrayList;
 
 
 /**
@@ -50,16 +51,41 @@ public abstract class Pile {
     }
 
 
+    /**
+     * Constructs a Pile object
+     * 
+     * Default backing collection is an arraylist
+     * 
+     * @param name name assigned to this pile
+     * @throws IllegalArgumentException if name is empty
+     * @throws IllegalArgumentException if name is null
+     */
+    
+    protected Pile(String name) {
+        this(new ArrayList<Card>(), name);
+    }
+
     //getter methods
 
     /**
-     * Gives an unmodifiable collection of cards to caller
+     * Returns an unmodifiable collection of cards to
      * 
      * @return an unmodifiable collection of the cards in this pile
      */
 
     public Collection<Card> getCards() {
         return Collections.unmodifiableCollection(cards);
+    }
+
+
+    /**
+     * Returns anmodifiable collection of cards
+     * 
+     * @return the backing collection of the cards in this pile
+     */
+
+    protected Collection<Card> getBackingCollection() {
+        return cards;
     }
 
 
