@@ -120,58 +120,37 @@ public abstract class Pile {
 
 
     /**
-     * Defines how implementations choose a card for transferring
-     * 
-     * Implementations must return a card currently contained within the pile
-     */
-    protected abstract Card selectCard();
-
-
-    /**
-     * Transfers x cards from the given pile to a specified pile
+     * Transfers a card from the given pile to a specified pile
      * 
      * @param pile pile that receives transferred cards
-     * @param transferSize how many cards are transferred
+     * @param card which card is selected
      * @throws IllegalArgumentException if pile is null
-     * @throws IllegalArgumentException if transferSize is less than 1
-     * @throws IllegalArgumentException if there arent enough cards left in source pile
+     * @throws IllegalArgumentException if transferCard is null
+     * @throws IllegalArgumentException if card is not in source pile
      */
 
-    protected void transferCards(Pile pile, int transferSize) {
+    protected void transferCard(Pile pile, Card card) {
 
         //validation
         if (pile == null) {
             throw new IllegalArgumentException("Pile cannot be null");
         }
 
-        if (transferSize < 1) {
-            throw new IllegalArgumentException("Must transfer at least 1 card");
+        if (card == null) {
+            throw new IllegalArgumentException("Cannot transfer a null card");
         }
 
-        if (transferSize > cards.size()) {
-            throw new IllegalArgumentException("Not enough cards left in pile");
-        }
-        
         //method body
-        for (int i = 0; i < transferSize; i++) {
-            Card card = selectCard();
+        if (cards.contains(card)) {
             cards.remove(card);
             pile.addCard(card);
         }
+        else {
+            throw new IllegalArgumentException("Card does not exist");
+        }
     }
+        
 
-
-    /**
-     * Transfers 1 card from the given pile to a specified pile
-     * 
-     * @param pile pile that recieves transferred cards
-     * @throws IllegalArgumentException if pile is null
-     * @throws IllegalArgumentException if there arent enough cards left in source pile
-     */
-
-    protected void transferCards(Pile pile) {
-        this.transferCards(pile, 1);
-    }
 
     //Overrides
 
